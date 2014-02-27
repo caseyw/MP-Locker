@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>MP Locker</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+</head>
+<body>
+
+    <div id="region-header"></div>
+
+    <div id="region-master"></div>
+
+
+    <script type="text/template" id="session-selector">
+        <li><a href="#"><%=date %></a></li>
+    </script>
+
+    <script type="text/template" id="session-view">
+        <h2>View Session</h2>
+
+        <dl>
+            <dt>Name</dt>
+            <dd><%=name %></dd>
+            <dt>Date</dt>
+            <dd><%=date %></dd>
+            <dt>Time</dt>
+            <dd>XXX</dd>
+            <dt>Duration</dt>
+            <dd><%=duration %></dd>
+        </dl>
+    </script>
+
+
+    <script type="text/template" id="layout-header">
+        <h1>MP Locker</h1>
+
+        <ul>
+            <li><a href="#" class="js-sessions">Sessions</a></li>
+            <li><a href="#" class="js-progress">Progress</a></li>
+        </ul>
+
+        <hr />
+    </script>
+
+
+    <script type="text/template" id="progress-explorer">
+
+        <h2>Progress</h2>
+
+        <div id="region-progress-list"></div>
+        <div id="region-progress-head"></div>
+        <div id="region-progress-graph"></div>
+
+    </script>
+
+
+    <script type="text/template" id="progress-explorer-selector">
+        <li><a href="#"><%=name %></a></li>
+    </script>
+
+
+    <script type="text/template" id="progress-explorer-head">
+        <h3><%=name %></h3>
+    </script>
+
+
+    <script type="text/template" id="progress-explorer-graph">
+        <div id="myfirstchart" style="height: 250px;"></div>
+    </script>
+
+
+    <script type="text/javascript" src="bower_components/marionette/public/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/marionette/public/javascripts/json2.js"></script>
+    <script type="text/javascript" src="bower_components/marionette/public/javascripts/underscore.js"></script>
+    <script type="text/javascript" src="bower_components/marionette/public/javascripts/backbone.js"></script>
+    <script type="text/javascript" src="bower_components/marionette/public/javascripts/backbone.babysitter.js"></script>
+    <script type="text/javascript" src="bower_components/marionette/public/javascripts/backbone.wreqr.js"></script>
+    <script type="text/javascript" src="bower_components/marionette/lib/core/backbone.marionette.js"></script>
+
+<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/entity/session.js"></script>
+    <script type="text/javascript" src="js/entity/exercise.js"></script>
+    <script type="text/javascript" src="js/entity/progress.js"></script>
+    <script type="text/javascript" src="js/app/layout/header/controller.js"></script>
+    <script type="text/javascript" src="js/app/layout/header/view.js"></script>
+    <script type="text/javascript" src="js/app/progress/explorer/controller.js"></script>
+    <script type="text/javascript" src="js/app/progress/explorer/view.js"></script>
+    <script type="text/javascript" src="js/app/session/list/controller.js"></script>
+    <script type="text/javascript" src="js/app/session/list/view.js"></script>
+    <script type="text/javascript" src="js/app/session/view/controller.js"></script>
+    <script type="text/javascript" src="js/app/session/view/view.js"></script>
+
+    <script type="text/javascript">
+
+        Locker.start();
+
+    </script>
+
+</body>
+</html>

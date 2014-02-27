@@ -1,0 +1,9 @@
+.DS_STORE
+._*
+nbproject
+server/.vagrant
+server/config.yml
+server/vendor
+server/www/.htaccess
+client/bower_components
+client/node_modules

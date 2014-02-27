@@ -1,0 +1,15 @@
+{
+    "require": {
+        "silex/silex": "~1.1",
+        "doctrine/dbal": "2.2.*",
+        "symfony/console": "@stable",
+        "symfony/yaml": "@stable"
+    },
+
+    "autoload": {
+        "psr-0" : {
+            "": ["library"]
+        }
+    }
+
+}
