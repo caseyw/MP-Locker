@@ -3,7 +3,7 @@ Locker.module('AppDashboard', function(Dashboard, Locker, Backbone, Marionette, 
 
     Dashboard.Index = Marionette.ItemView.extend(
     {
-        template: "#dashboard",
+        template: "#dashboard"
     });
 
 });

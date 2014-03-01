@@ -38,7 +38,7 @@ $app->get('/session/{id}', function($id) use ($app)
 
 $app->get('/exercise', function() use ($app)
 {
-    $dataset = $app['db']->fetchAll('SELECT * FROM exercise ORDER BY name ASC');
+    $dataset = $app['db']->fetchAll('SELECT * FROM exercise WHERE track = 1 ORDER BY name ASC');
 
     return $app->json($dataset);
 });

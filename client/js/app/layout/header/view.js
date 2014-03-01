@@ -8,7 +8,13 @@ Locker.module('AppLayout.Header', function(Header, Locker, Backbone, Marionette,
         events:
         {
             'click a.js-sessions': 'viewSessions',
-            'click a.js-progress': 'viewProgress'
+            'click a.js-progress': 'viewProgress',
+            'click a.js-dashboard': 'viewDashboard'
+        },
+
+        viewDashboard: function()
+        {
+            Locker.AppDashboard.Controller.index();
         },
 
         viewSessions: function()
