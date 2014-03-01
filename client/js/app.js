@@ -13,5 +13,5 @@ Locker.on("initialize:after", function()
 {
     Backbone.history.start();
 
-    Locker.AppSession.List.Controller.getSessions();
+    Locker.AppDashboard.Controller.index();
 });

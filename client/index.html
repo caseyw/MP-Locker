@@ -14,6 +14,10 @@
 
     <div id="region-master"></div>
 
+    
+    <script type="text/template" id="dashboard">
+        <h2>Dashboard</h2>
+    </script>
 
     <script type="text/template" id="session-selector">
         <li><a href="#"><%=date %></a></li>
@@ -73,6 +77,9 @@
     </script>
 
 
+    <link rel="stylesheet" href="bower_components/morris.js/morris.css" />
+
+
     <script type="text/javascript" src="bower_components/marionette/public/javascripts/jquery.js"></script>
     <script type="text/javascript" src="bower_components/marionette/public/javascripts/json2.js"></script>
     <script type="text/javascript" src="bower_components/marionette/public/javascripts/underscore.js"></script>
@@ -80,12 +87,8 @@
     <script type="text/javascript" src="bower_components/marionette/public/javascripts/backbone.babysitter.js"></script>
     <script type="text/javascript" src="bower_components/marionette/public/javascripts/backbone.wreqr.js"></script>
     <script type="text/javascript" src="bower_components/marionette/lib/core/backbone.marionette.js"></script>
-
-<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-
+    <script type="text/javascript" src="bower_components/raphael/raphael-min.js"></script>
+    <script type="text/javascript" src="bower_components/morris.js/morris.js"></script>
 
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/entity/session.js"></script>
@@ -93,6 +96,8 @@
     <script type="text/javascript" src="js/entity/progress.js"></script>
     <script type="text/javascript" src="js/app/layout/header/controller.js"></script>
     <script type="text/javascript" src="js/app/layout/header/view.js"></script>
+    <script type="text/javascript" src="js/app/dashboard/controller.js"></script>
+    <script type="text/javascript" src="js/app/dashboard/view.js"></script>
     <script type="text/javascript" src="js/app/progress/explorer/controller.js"></script>
     <script type="text/javascript" src="js/app/progress/explorer/view.js"></script>
     <script type="text/javascript" src="js/app/session/list/controller.js"></script>
