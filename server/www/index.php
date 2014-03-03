@@ -44,14 +44,14 @@ $app->get('/exercise', function() use ($app)
 });
 
 
-$app->get('/progress', function(\Symfony\Component\HttpFoundation\Request $request) use ($app)
+$app->get('/exercise/{id}/progress', function($id) use ($app)
 {
     $dataset = $app['db']->fetchAll('SELECT `date`, reps, MAX(amount) as amount FROM session_exercise_set ses
         LEFT JOIN session_exercise se ON ses.session_exercise_id = se.id
         LEFT JOIN `session` s ON se.session_id = s.id
         WHERE se.exercise_id = ?
         GROUP BY s.id, ses.id
-        ORDER BY s.date ASC', array($request->get('exercise')));
+        ORDER BY s.date ASC', array($id));
 
     return $app->json($dataset);
 });
