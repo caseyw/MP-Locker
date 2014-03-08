@@ -3,9 +3,7 @@
 namespace Locker\Console;
 
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 
@@ -54,14 +52,7 @@ class SessionCreate extends Command
 
         if(!empty($exercise))
         {
-            $match = $this->_getExerciseID($exercise);
-
-            $this->getHelper('db')->getConnection()->insert('session_exercise', array(
-                'exercise_id' => $match,
-                'session_id'  => $sessionId
-            ));
-
-            $exerciseId = $this->getHelper('db')->getConnection()->lastInsertId();
+            $exerciseId = $this->_getExerciseID($exercise);
 
             return $this->_promptSet($output, $exerciseId, $sessionId);
         }
@@ -72,14 +63,14 @@ class SessionCreate extends Command
     {
         $dialog = $this->_dialog();
 
-        $set = $dialog->askAndValidate($output, "<info>{$exerciseId}</info> Set (count,amount): ", function($answer)
+        $set = $dialog->askAndValidate($output, "<info>{$exerciseId}</info> Set (count@amount): ", function($answer)
         {
             if(empty($answer))
             {
                 return $answer;
             }
 
-            $set = explode(',', $answer);
+            $set = explode('@', $answer);
 
             if(count($set) != 2)
             {
@@ -93,11 +84,12 @@ class SessionCreate extends Command
         {
             return $this->_promptExercise($output, $sessionId);
         } else {
-            $this->getHelper('db')->getConnection()->insert('session_exercise_set', array(
-                'a'  => $order,
-                'b'  => trim($set[0]),
+            $this->getHelper('db')->getConnection()->insert('session_exercise', array(
+                $this->getHelper('db')->getConnection()->quoteIdentifier('order') => $order,
+                $this->getHelper('db')->getConnection()->quoteIdentifier('reps')   => trim($set[0]),
                 'amount' => trim($set[1]),
-                'session_exercise_id' => $exerciseId,
+                'session_id'  => $sessionId,
+                'exercise_id' => $exerciseId
             ));
 
             $order++;

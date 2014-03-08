@@ -14,6 +14,5 @@ $console->getHelperSet()
         ->set(new Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper($connection), 'db');
 
 $console->add(new \Locker\Console\SessionCreate);
-$console->add(new \Locker\Console\Import);
 
 $console->run();
