@@ -1,26 +1,26 @@
 Locker.module('Entity', function(Entity, Locker, Backbone, Marionette, $, _)
 {
 
-    Entity.ModelExerciseProgress = Backbone.Model.extend(
+    Entity.ModelUserProgress = Backbone.Model.extend(
     {});
 
-    Entity.CollectionExerciseProgress = Backbone.Collection.extend(
+    Entity.CollectionUserProgress = Backbone.Collection.extend(
     {
         url: function()
         {
-            return 'http://localhost:8080/exercise/' + this.id + '/progress';
+            return 'http://localhost:8080/user/1/progress/' + this.id;
         },
 
-        model: Entity.ModelExerciseProgress
+        model: Entity.ModelUserProgress
     });
 
 
 
-    Locker.reqres.setHandler('exercise-progress:entities', function(id)
+    Locker.reqres.setHandler('user.progress:entities', function(id)
     {
         var defer    = new $.Deferred();
 
-        var entities = new Entity.CollectionExerciseProgress();
+        var entities = new Entity.CollectionUserProgress();
 
         entities.id = id;
 

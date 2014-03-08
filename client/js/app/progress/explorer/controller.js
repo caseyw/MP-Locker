@@ -39,7 +39,7 @@ Locker.module('AppProgress.Explorer', function(Explorer, Locker, Backbone, Mario
             layout.regionExplorerHeader.show(graphHeader);
 
 
-            var query = Locker.request('exercise-progress:entities', model.get("id"));
+            var query = Locker.request('user.progress:entities', model.get("id"));
 
             $.when(query).done(function(report)
             {
